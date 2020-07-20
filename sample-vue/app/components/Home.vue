@@ -4,8 +4,8 @@
             <Label text="Home"/>
         </ActionBar>
 
-        <GridLayout>
-            <Button text="Button" @tap="open" />
+        <GridLayout @loaded="loaded">
+            <Button text="Open" @tap="open" class="-primary" />
             <!--<Label class="info">
                 <FormattedString>
                     <Span class="fas" text.decode="&#xf135; "/>
@@ -18,7 +18,7 @@
 
 <script>
   import { CalendarPlugin } from "calendar-plugin";
-  let calendarPlugin = new CalendarPlugin();
+  let calendarPlugin;
   export default {
     computed: {
       message() {
@@ -26,7 +26,10 @@
       }
     },
     methods: {
-      open: function() {
+      loaded() {
+        calendarPlugin = new CalendarPlugin();
+      },
+      open() {
         calendarPlugin.showCalendar((calendar) => {
           console.log("got a calendar!", calendar);
         });

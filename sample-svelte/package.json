@@ -22,9 +22,9 @@
     "clean": "npx rimraf hooks node_modules package-lock.json && npm i"
   },
   "dependencies": {
-    "nativescript-theme-core": "~2.0.24",
+    "@nativescript/core": "^6.5.6",
+    "@nativescript/theme": "~2.3.0",
     "svelte-native": "~0.8.0",
-    "tns-core-modules": "~6.5.10",
     "calendar-plugin": "file:../plugin/calendar-plugin-1.0.0.tgz"
   },
   "devDependencies": {

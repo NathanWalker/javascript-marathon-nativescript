@@ -1,7 +1,7 @@
 <page>
     <actionBar title="Svelte Native App" />
     <stackLayout>
-        <button text="Open" on:tap="{ () => open() }" />
+        <button text="Open" on:tap="{ open }" on:loaded="{ loaded }" />
         <label class="info" horizontalAlignment="center" verticalAlignment="center" textWrap="true">
             <formattedString>
                 <span class="fas" text="&#xf135;" />
@@ -16,15 +16,15 @@
     let message = "Blank Svelte Native App";
     let calendarPlugin;
 
-    setTimeout(() => {
-      calendarPlugin = new CalendarPlugin();
-
-    }, 2000);
-
     const open = () => {
       calendarPlugin.showCalendar((calendar) => {
         console.log('calendar:', calendar);
       });
+    };
+
+    const loaded = () => {
+      console.log('loaded!');
+      calendarPlugin = new CalendarPlugin();
     };
 </script>
 
