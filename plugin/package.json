@@ -1,0 +1,22 @@
+{
+  "name": "calendar-plugin",
+  "version": "1.0.0",
+  "main": "calendar",
+  "types": "calendar.d.ts",
+  "nativescript": {
+    "platforms": {
+      "android": "6.5.0",
+      "ios": "6.5.0"
+    }
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "@nativescript/core": "^6.5.10"
+  },
+  "devDependencies": {
+    "tns-platform-declarations": "^6.5.10",
+    "typescript": "~3.8.3"
+  }
+}

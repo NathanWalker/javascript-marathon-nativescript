@@ -1,0 +1,6 @@
+node_modules
+platforms
+hooks
+package-lock.json
+plugin/*.js
+.DS_Store
