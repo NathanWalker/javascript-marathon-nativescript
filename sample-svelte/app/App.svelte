@@ -1,17 +1,20 @@
-<page>
-    <actionBar title="Svelte Native App" />
-    <stackLayout>
-        <button text="Open" on:tap="{ open }" on:loaded="{ loaded }" />
-        <label class="info" horizontalAlignment="center" verticalAlignment="center" textWrap="true">
-            <formattedString>
-                <span class="fas" text="&#xf135;" />
-                <span text=" {message}" />
-            </formattedString>
-        </label>
-    </stackLayout>
-</page>
+
+  <page>
+      <actionBar title="Svelte Native App" />
+      <stackLayout>
+          <button text="Open" on:tap="{ open }" />
+          <label class="info" horizontalAlignment="center" verticalAlignment="center" textWrap="true">
+              <formattedString>
+                  <span class="fas" text="&#xf135;" />
+                  <span text=" {message}" />
+              </formattedString>
+          </label>
+      </stackLayout>
+  </page>
+
 
 <script>
+    import { onMount } from 'svelte';
     import { CalendarPlugin } from 'calendar-plugin';
     let message = "Blank Svelte Native App";
     let calendarPlugin;
@@ -22,10 +25,10 @@
       });
     };
 
-    const loaded = () => {
-      console.log('loaded!');
+    onMount(() => {
+    	console.log('onMount!');
       calendarPlugin = new CalendarPlugin();
-    };
+    });
 </script>
 
 <style>
